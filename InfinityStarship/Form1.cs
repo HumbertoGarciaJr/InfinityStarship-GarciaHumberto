@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InfinityStarship
 {
-    public partial class Form1 : Form
+    public partial class playScreenForm : Form
     {
-        public Form1()
+        public playScreenForm()
         {
             InitializeComponent();
         }
