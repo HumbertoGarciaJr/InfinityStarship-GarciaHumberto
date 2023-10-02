@@ -40,6 +40,8 @@ namespace InfinityStarship
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Play Screen Form";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.playScreenForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.playScreenForm_KeyDown);
             this.ResumeLayout(false);
 
         }

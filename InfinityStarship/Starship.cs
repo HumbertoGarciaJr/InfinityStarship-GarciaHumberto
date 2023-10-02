@@ -57,6 +57,20 @@ namespace InfinityStarship
             form.Controls.Add(spaceship);//adding spaceship PictureBox as a available control to the form(frmArkanoid)
         }
 
-        //TODO
+        //Function moveControl to Control movement of the spaceship(arrow keys to move)
+        public void moveControl(KeyEventArgs e)
+        {
+            //If/Else If Statement if Left Key is being pressed...else if
+            if (e.KeyCode == Keys.Left)
+            {
+                //Store compound subtraction of spaceshipSpeed into Left(Goes Left)
+                spaceship.Left -= spaceshipSpeed;
+            }
+            else if (e.KeyCode == Keys.Right)//Right Key is being pressed
+            {
+                //Store compound addition of spaceshipSpeed into Left(Making it Right)
+                spaceship.Left += spaceshipSpeed;
+            }
+        }
     }
 }
