@@ -17,6 +17,8 @@ namespace InfinityStarship
     //Class playScreenForm
     public partial class playScreenForm : Form
     {
+        //TODO - Instantiate Starship Class
+
         //Default Constructor
         public playScreenForm()
         {

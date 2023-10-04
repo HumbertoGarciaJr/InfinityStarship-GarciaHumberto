@@ -63,13 +63,25 @@ namespace InfinityStarship
             //If/Else If Statement if Left Key is being pressed...else if
             if (e.KeyCode == Keys.Left)
             {
-                //Store compound subtraction of spaceshipSpeed into Left(Goes Left)
+                //Store compound subtraction of spaceshipSpeed into Left Property of spaceship(Goes Left)
                 spaceship.Left -= spaceshipSpeed;
             }
             else if (e.KeyCode == Keys.Right)//Right Key is being pressed
             {
-                //Store compound addition of spaceshipSpeed into Left(Making it Right)
+                //Store compound addition of spaceshipSpeed into Left Property of spaceship(Making it go Right)
                 spaceship.Left += spaceshipSpeed;
+            }
+
+            //If/Else If Statement if spaceship hits/collides the Left Edge...else if
+            if (spaceship.Left <= 0)
+            {
+                //Store 0 into Left
+                spaceship.Left = 0;
+            }
+            else if (spaceship.Right >= form.ClientSize.Width)//spaceship hits/collides the Right Edge
+            {
+                //Store Width Property of ClientSize form - Width Property of spaceship into Left(Goes Right) Property of spaceship
+                spaceship.Left = form.ClientSize.Width - spaceship.Width;
             }
         }
     }
