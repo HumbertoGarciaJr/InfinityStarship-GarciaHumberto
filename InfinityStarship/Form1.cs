@@ -17,7 +17,10 @@ namespace InfinityStarship
     //Class playScreenForm
     public partial class playScreenForm : Form
     {
-        //TODO - Instantiate Starship Class
+        //Objects Instantiation
+        Starship spaceship;//declare spaceship obj of Class Starship
+
+        //Variables
 
         //Default Constructor
         public playScreenForm()
@@ -29,13 +32,15 @@ namespace InfinityStarship
         //Function event playScreenForm_Load to Load on Startup of playScreenForm form
         private void playScreenForm_Load(object sender, EventArgs e)
         {
-
+            //Store new Class Starship into spaceship
+            spaceship = new Starship(this);//initialize spaceship obj accessing Class Starship in this(playScreenForm) form
         }
 
         //Function event playScreenForm_KeyDown to Occur when the Key is being pressed down
         private void playScreenForm_KeyDown(object sender, KeyEventArgs e)
         {
-
+            //Call Function moveControl of spaceship
+            spaceship.moveControl(e);
         }
     }
 }
