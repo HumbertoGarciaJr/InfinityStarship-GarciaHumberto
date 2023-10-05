@@ -15,8 +15,7 @@ namespace InfinityStarship
     //Class Starship
     class Starship
     {
-        //Objects
-        //Instantiations/Attributes Properties Functions(Declarations)
+        //Objects Instantiation & Attributes Properties Functions(Declarations)
         public PictureBox spaceship;
         public int spaceshipSpeed { get; set; }
         public playScreenForm form;
