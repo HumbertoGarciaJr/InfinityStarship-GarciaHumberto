@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;//Using namespace System.Drawing to allow use of Drawing controls/properties
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,13 +26,27 @@ namespace InfinityStarship
         //Constructor
         public UFO(playScreenForm form)//1 parameter
         {
-            //TODO
+            //Objects/Attributes Initializations
+            this.form = form;//store form(parameter) into this(UFO) form
+            enemySpeedX = 5;//store 5 into enemySpeedX(5 pixels per tick)
+            enemySpeedY = 5;//store 5 into enemySpeedY(5 pixels per tick)
+            increasedSpeed = 0;//store 0 into increasedSpeed(default speed should not be increased)
+
+            //Call Function Init
+            Init();
         }
 
         //Function Init to hold all methods within one
         private void Init()
         {
+            //Call Function spawnEnemyWave
+            spawnEnemyWave();
+        }
 
+        //Function spawnEnemyWave to build and spawn enemies(UFOs)
+        private void spawnEnemyWave()
+        {
+            //TODO
         }
     }
 }
