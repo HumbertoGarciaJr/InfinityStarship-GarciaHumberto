@@ -47,20 +47,74 @@ namespace InfinityStarship
         //Function spawnEnemyWave to build and spawn enemies(UFOs)
         private void spawnEnemyWave()
         {
-            //Call Function Add of enemies(To store new class PictureBox into enemies list)
-            enemies.Add(new PictureBox()
-            {//enemies list Properties Constructor
-                BackColor = Color.ForestGreen,//Temporary PictureBox Backcolor of ForestGreen
-                Width = 75,//PictureBox Width of 75
-                Height = 75,//PictureBox Height of 75
-                Visible = true,//PictureBox Visibility at true
-                Left = 300,//PictureBox at Left of 300(Default)
-                Top = 100,//PictureBox at Top of 100(Default)
-            });
+            //For Loop running i 12 times
+            for (int i = 0; i <= 11; i++)
+            {
 
-            //Call Function Add to Property of form(playScreenForm)
-            form.Controls.Add(enemies[0]);//adding enemy temporary index to enemies list of PictureBoxes as a available controls to the form(playScreenForm)
-            //TODO
+                //Call Function Add of enemies(To store new class PictureBox into enemies list)
+                enemies.Add(new PictureBox()
+                {//enemies list Properties Constructor
+                    BackColor = Color.ForestGreen,//Temporary PictureBox Backcolor of ForestGreen
+                    Width = 75,//PictureBox Width of 75
+                    Height = 75,//PictureBox Height of 75
+                    Visible = true,//PictureBox Visibility at true
+                    Left = 725,//PictureBox at Left of 725(Default)
+                    Top = 100,//PictureBox at Top of 100(Default)
+                });
+
+                //Switch Case based on given current index
+                switch (i)
+                {
+                    case (1):
+                        //Store +125 from each previous Left value(starting from Default value) into Left of enemies index i(current index of for loop) &
+                        //Store +100 from each previous Top value(starting from Default value) intot Top of enemies index i(current index of for loop)
+                        enemies[i].Left = 850;
+                        break;
+                    case (2):
+                        enemies[i].Left = 975;
+                        break;
+                    case (3):
+                        enemies[i].Left = 1100;
+                        break;
+                    case (4):
+                        enemies[i].Left = 725;
+                        enemies[i].Top = 200;
+                        break;
+                    case (5):
+                        enemies[i].Left = 850;
+                        enemies[i].Top = 200;
+                        break;
+                    case (6):
+                        enemies[i].Left = 975;
+                        enemies[i].Top = 200;
+                        break;
+                    case (7):
+                        enemies[i].Left = 1100;
+                        enemies[i].Top = 200;
+                        break;
+                    case (8):
+                        enemies[i].Left = 725;
+                        enemies[i].Top = 300;
+                        break;
+                    case (9):
+                        enemies[i].Left = 850;
+                        enemies[i].Top = 300;
+                        break;
+                    case (10):
+                        enemies[i].Left = 975;
+                        enemies[i].Top = 300;
+                        break;
+                    case (11):
+                        enemies[i].Left = 1100;
+                        enemies[i].Top = 300;
+                        break;
+                }
+
+                //Call Function Add to Property of form(playScreenForm)
+                form.Controls.Add(enemies[i]);//adding enemy index to enemies list of PictureBoxes as a available controls to the form(playScreenForm)
+            }
         }
+
+        //TODO
     }
 }
