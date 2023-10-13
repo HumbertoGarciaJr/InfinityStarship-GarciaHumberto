@@ -42,5 +42,11 @@ namespace InfinityStarship
             //Call Function moveControl of spaceship
             spaceship.moveControl(e);
         }
+
+        //Function event playScreenForm_Tick to Run Timer constantly updating game's behaviors of playScreenForm form
+        private void playScreenForm_Tick(object sender, EventArgs e)
+        {
+            //TODO
+        }
     }
 }

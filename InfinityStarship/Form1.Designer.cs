@@ -29,7 +29,14 @@ namespace InfinityStarship
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.timer_playScreenForm = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // timer_playScreenForm
+            // 
+            this.timer_playScreenForm.Enabled = true;
+            this.timer_playScreenForm.Tick += new System.EventHandler(this.playScreenForm_Tick);
             // 
             // playScreenForm
             // 
@@ -47,6 +54,8 @@ namespace InfinityStarship
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timer_playScreenForm;
     }
 }
 

@@ -115,6 +115,10 @@ namespace InfinityStarship
             }
         }
 
-        //TODO
+        //Function moveEnemyWave to Control movement behaviors of the enemies(Computer Automated Movement Horizontally/Vertically)
+        public void moveEnemyWave()
+        {
+            //TODO
+        }
     }
 }
