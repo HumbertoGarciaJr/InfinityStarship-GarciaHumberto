@@ -28,7 +28,7 @@ namespace InfinityStarship
         {
             //Objects/Attributes Initializations
             this.form = form;//store form(parameter) into this(UFO) form
-            enemySpeedX = 5;//store 5 into enemySpeedX(5 pixels per tick)
+            enemySpeedX = 25;//store 25 into enemySpeedX(25 pixels per tick)
             enemySpeedY = 5;//store 5 into enemySpeedY(5 pixels per tick)
             increasedSpeed = 0;//store 0 into increasedSpeed(default speed should not be increased)
             enemies = new List<PictureBox>();//store new class PictureBox obj collection List into enemies
@@ -118,7 +118,17 @@ namespace InfinityStarship
         //Function moveEnemyWave to Control movement behaviors of the enemies(Computer Automated Movement Horizontally/Vertically)
         public void moveEnemyWave()
         {
-            //TODO
+            //For Loop running i based on count Property of enemies list(12 enemies)
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                //If/Else If statement if current enemySpeedX is greater than 0(any positive enemySpeedX value goes horizontally right)...else if
+                if (enemySpeedX > 0)
+                {
+                    //Store compound addition of positive enemySpeedX value into Left Property of enemies index(Making enemies go Right)
+                    enemies[i].Left += enemySpeedX;
+                }
+                //TODO
+            }
         }
     }
 }
