@@ -127,6 +127,11 @@ namespace InfinityStarship
                     //Store compound addition of positive enemySpeedX value into Left Property of enemies index(Making enemies go Right)
                     enemies[i].Left += enemySpeedX;
                 }
+                else if (enemySpeedX < 0)//current enemySpeedX is less than 0(any negative enemySpeedX value goes horizontally left)
+                {
+                    //Store compound addition of negative enemySpeedX value into Left Property of enemies index(Making enemies go Left)
+                    enemies[i].Left += enemySpeedX;
+                }
                 //TODO
             }
         }
