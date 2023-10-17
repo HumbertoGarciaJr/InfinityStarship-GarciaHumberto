@@ -118,10 +118,13 @@ namespace InfinityStarship
         //Function moveEnemyWave to Control movement behaviors of the enemies(Computer Automated Movement Horizontally/Vertically)
         public void moveEnemyWave()
         {
+            //Local Variables
+            bool xReverseFlag = false;
+
             //For Loop running i based on count Property of enemies list(12 enemies)
             for (int i = 0; i < enemies.Count; i++)
             {
-                //If/Else If statement if current enemySpeedX is greater than 0(any positive enemySpeedX value goes horizontally right)...else if
+                //If/Else If Statement if current enemySpeedX is greater than 0(any positive enemySpeedX value goes horizontally right)...else if
                 if (enemySpeedX > 0)
                 {
                     //Store compound addition of positive enemySpeedX value into Left Property of enemies index(Making enemies go Right)
@@ -132,6 +135,20 @@ namespace InfinityStarship
                     //Store compound addition of negative enemySpeedX value into Left Property of enemies index(Making enemies go Left)
                     enemies[i].Left += enemySpeedX;
                 }
+
+                //If Statement if current enemies index Left Property is less than or equal to 0, Or
+                //current enemies index is greater than or equal to Width Property of ClientSize form
+                if (enemies[i].Left <= 0 || enemies[i].Right >= form.ClientSize.Width)
+                {
+                    //Store bool value true into xReverseFlag
+                    xReverseFlag = true;//allows every enemies index to loop properly before any next procedure.
+                }
+            }
+            //If Statement if xReverseFlag equals true
+            if (xReverseFlag == true)
+            {
+                //Store value -1 into enemySpeedX
+                enemySpeedX *= -1;//speed reverses to opposite value, switching horizontally its x moving direction from edge to edge
                 //TODO
             }
         }
