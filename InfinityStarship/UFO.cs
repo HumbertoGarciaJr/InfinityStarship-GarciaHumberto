@@ -29,7 +29,7 @@ namespace InfinityStarship
             //Objects/Attributes Initializations
             this.form = form;//store form(parameter) into this(UFO) form
             enemySpeedX = 25;//store 25 into enemySpeedX(25 pixels per tick)
-            enemySpeedY = 5;//store 5 into enemySpeedY(5 pixels per tick)
+            enemySpeedY = 100;//store 100 into enemySpeedY(100 pixels per tick)
             increasedSpeed = 0;//store 0 into increasedSpeed(default speed should not be increased)
             enemies = new List<PictureBox>();//store new class PictureBox obj collection List into enemies
 
@@ -149,7 +149,15 @@ namespace InfinityStarship
             {
                 //Store value -1 into enemySpeedX
                 enemySpeedX *= -1;//speed reverses to opposite value, switching horizontally its x moving direction from edge to edge
-                //TODO
+
+                //For Loop running i based on count Property of enemies list(12 enemies)
+                for (int i = 0; i < enemies.Count; i++)
+                {
+                    //Store compound addition of current enemySpeedX value into Left Property of enemies index(stops enemies x moving direction once per edge)
+                    enemies[i].Left += enemySpeedX;
+                    //Store compound addition of current enemySpeedY value into Top Property of enemies index(allows to move enemies y direction once per edge)
+                    enemies[i].Top += enemySpeedY;
+                }
             }
         }
     }
