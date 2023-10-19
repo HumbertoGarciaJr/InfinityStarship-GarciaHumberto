@@ -19,6 +19,7 @@ namespace InfinityStarship
     {
         //Objects Instantiation
         Starship spaceship;//declare spaceship obj of Class Starship
+        UFO enemies;//declare enemies obj of Class UFO
 
         //Variables
 
@@ -34,6 +35,8 @@ namespace InfinityStarship
         {
             //Store new Class Starship into spaceship
             spaceship = new Starship(this);//initialize spaceship obj accessing Class Starship in this(playScreenForm) form
+            //Store new Class UFO into enemies
+            enemies = new UFO(this);//initialize enemies obj accessing Class UFO in this(playScreenForm) form
         }
 
         //Function event playScreenForm_KeyDown to Occur when the Key is being pressed down
@@ -46,7 +49,8 @@ namespace InfinityStarship
         //Function event playScreenForm_Tick to Run Timer constantly updating game's behaviors of playScreenForm form
         private void playScreenForm_Tick(object sender, EventArgs e)
         {
-            //TODO
+            //Call Function moveEnemyWave of enemies
+            enemies.moveEnemyWave();
         }
     }
 }
