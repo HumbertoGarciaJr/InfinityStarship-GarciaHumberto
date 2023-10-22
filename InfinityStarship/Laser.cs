@@ -20,14 +20,19 @@ namespace InfinityStarship
         public int laserSpeed { get; set; }
         public playScreenForm form;
         public List<PictureBox> lasers;
+        public Starship spaceship;
+        public UFO enemies;
 
         //Constructor
-        public Laser (playScreenForm form)//1 parameter
+        public Laser (playScreenForm form, Starship spaceship, UFO enemies)//3 parameter
         {
+            //Objects/Attributes Initializations
             this.form = form;//store form(parameter) into this(Laser) form
             laserSpeed = 5;//store 5 into laserSpeed
             lasers = new List<PictureBox>();//store new class PictureBox obj collection List into lasers
-
+            this.spaceship = spaceship;//store spaceship(Starship parameter) into this(spaceship) obj instance in our class(Laser)
+            this.enemies = enemies;//store enemies(UFO parameter) into this(enemies) obj instance in our class(Laser)
+            
             //Call Function Init
             Init();
         }
