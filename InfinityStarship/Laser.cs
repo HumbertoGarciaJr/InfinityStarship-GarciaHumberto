@@ -46,7 +46,7 @@ namespace InfinityStarship
                 BackColor = Color.Red,//PictureBox Backcolor of Red
                 Width = 10,//PictureBox Width of 10
                 Height = 50,//PictureBox Height of 50
-                Visible = false,//Temporary PictureBox Visibility at true
+                Visible = false,//Temporary PictureBox Visibility at false
                 Left = (form.ClientSize.Width - 10) / 2,//Temporary PictureBox at Left of ClientSize form - 10 / 2(Position Middle Horizontally)
                 Top = (form.ClientSize.Height - 150)//Temporary PictureBox at Top of ClientSize form - 150(Position Bottom Vertically)
             };
@@ -55,6 +55,34 @@ namespace InfinityStarship
             form.Controls.Add(laser);//adding laser PictureBox as a available control to the form(frmArkanoid)
         }
 
-        //TODO
+        //Function moveLaserControl to Control movement of the laser(similarly to 'Starship' class's spaceship)
+        public void moveLaserControl(KeyEventArgs e)
+        {
+            //If/Else If Statement if Left Key is being pressed...else if
+            if (e.KeyCode == Keys.Left)
+            {
+                //Store compound subtraction of laserSpeed into Left Property of laser(Goes Left)
+                laser.Left -= laserSpeed;
+            }
+            else if (e.KeyCode == Keys.Right)//Right Key is being pressed
+            {
+                //Store compound addition of laserSpeed into Left Property of laser(Making it go Right)
+                laser.Left += laserSpeed;
+            }
+
+            //If/Else If Statement if spaceship of 'Starship' hits/collides the Left Edge(Laser should stop)...else if
+            if (laser.Left <= 45)
+            {
+                //Store 45 into Left
+                laser.Left = 45;
+            }
+            else if (laser.Right >= form.ClientSize.Width - 45)//spaceship of 'Starship' hits/collides the Right Edge(Laser should stop)
+            {
+                //Store Width Property of ClientSize form - Width Property of laser - 45 into Left(Goes Right) Property of laser
+                laser.Left = form.ClientSize.Width - laser.Width - 45;
+            }
+
+            //TODO
+        }
     }
 }
