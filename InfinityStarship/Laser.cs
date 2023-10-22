@@ -42,7 +42,7 @@ namespace InfinityStarship
         {
             //Store new class PictureBox into laser object
             laser = new PictureBox()
-            {//laser Properties Constructor
+            {//laser Properties Constructor(Placeholder)
                 BackColor = Color.Red,//PictureBox Backcolor of Red
                 Width = 10,//PictureBox Width of 10
                 Height = 50,//PictureBox Height of 50
@@ -82,7 +82,36 @@ namespace InfinityStarship
                 laser.Left = form.ClientSize.Width - laser.Width - 45;
             }
 
-            //TODO
+            //If Statement if Space Key is being pressed
+            if (e.KeyCode == Keys.Space)
+            {
+                //Call Function Add of lasers(To store new class PictureBox into lasers list)
+                lasers.Add(new PictureBox()
+                {//lasers list Properties Constructor(Actual) similarly to laser
+                    BackColor = Color.Red,
+                    Width = 10,
+                    Height = 50,
+                    Visible = true,
+                    Left = laser.Location.X,
+                    Top = laser.Location.Y,
+                });
+
+                //Call Function AddRange to Property of form(playScreenForm)
+                form.Controls.AddRange(lasers.ToArray());//adding lasers to an array as available controls to the form(playScreenForm)
+            }
         }
+
+        //Function shootLaser to Control movement behaviors of the lasers(Vertically)
+        public void shootLaser()
+        {
+            //Foreach loop foreach type(laser) in lasers
+            foreach(PictureBox laser in lasers)
+            {
+                //Store compound subtraction of -25 value into Top Property of laser type(Making lasers go Up)
+                laser.Top -= 25;
+            }
+        }
+
+        //TODO
     }
 }
