@@ -45,10 +45,10 @@ namespace InfinityStarship
             {//laser Properties Constructor(Placeholder)
                 BackColor = Color.Red,//PictureBox Backcolor of Red
                 Width = 10,//PictureBox Width of 10
-                Height = 50,//PictureBox Height of 50
+                Height = 30,//PictureBox Height of 30
                 Visible = false,//Temporary PictureBox Visibility at false
                 Left = (form.ClientSize.Width - 10) / 2,//Temporary PictureBox at Left of ClientSize form - 10 / 2(Position Middle Horizontally)
-                Top = (form.ClientSize.Height - 150)//Temporary PictureBox at Top of ClientSize form - 150(Position Bottom Vertically)
+                Top = (form.ClientSize.Height - 100)//Temporary PictureBox at Top of ClientSize form - 100(Position Bottom Vertically)
             };
 
             //Call Function Add to Property of form(playScreenForm)
@@ -90,7 +90,7 @@ namespace InfinityStarship
                 {//lasers list Properties Constructor(Actual) similarly to laser
                     BackColor = Color.Red,
                     Width = 10,
-                    Height = 50,
+                    Height = 30,
                     Visible = true,
                     Left = laser.Location.X,
                     Top = laser.Location.Y,
