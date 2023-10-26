@@ -36,7 +36,7 @@ namespace InfinityStarship
             // timer_playScreenForm
             // 
             this.timer_playScreenForm.Enabled = true;
-            this.timer_playScreenForm.Interval = 1000;
+            this.timer_playScreenForm.Interval = 25;
             this.timer_playScreenForm.Tick += new System.EventHandler(this.playScreenForm_Tick);
             // 
             // playScreenForm
