@@ -60,6 +60,7 @@ namespace InfinityStarship
                     Visible = true,//PictureBox Visibility at true
                     Left = 725,//PictureBox at Left of 725(Default)
                     Top = 100,//PictureBox at Top of 100(Default)
+                    Tag = "Enemy",//PictureBox Tag of "Enemy" for each enemies list enemy index
                 });
 
                 //Switch Case based on given current index
