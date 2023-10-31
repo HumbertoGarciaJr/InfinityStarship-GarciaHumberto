@@ -112,6 +112,14 @@ namespace InfinityStarship
             }
         }
 
-        //TODO
+        //Function destroyEnemyAndLaser to Destroy/Remove enemies/lasers upon any interactive hit/collision
+        public void destroyEnemyAndLaser()
+        {
+            //Foreach loop foreach type(laser) in lasers
+            foreach (PictureBox laser in lasers)
+            {
+                //TODO
+            }
+        }
     }
 }
