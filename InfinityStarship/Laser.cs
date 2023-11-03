@@ -110,6 +110,8 @@ namespace InfinityStarship
                 //Store compound subtraction of -25 value into Top Property of laser type(Making lasers go Up)
                 laser.Top -= 25;
             }
+
+            //TODO
         }
 
         //Function destroyEnemyAndLaser to Destroy/Remove enemies/lasers upon any interactive hit/collision
@@ -124,7 +126,15 @@ namespace InfinityStarship
                     //If Statement if "Enemy" is Tag of current item.
                     if (item.Tag == "Enemy")
                     {
-                        //TODO
+                        //If Statement if laser Bounds using Call Function IntersectsWith item Bounds
+                        if (laser.Bounds.IntersectsWith(item.Bounds))
+                        {
+                            //Call Function Remove to destroy current item & laser of form
+                            form.Controls.Remove(item);
+                            form.Controls.Remove(laser);
+                            //Store 0 into Top Property of laser type(Makes it stop moving Up)
+                            laser.Top = 0;
+                        }
                     }
                 }
             }
