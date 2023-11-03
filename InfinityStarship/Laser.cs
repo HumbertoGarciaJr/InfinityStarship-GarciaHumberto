@@ -118,7 +118,15 @@ namespace InfinityStarship
             //Foreach loop foreach type(laser) in lasers
             foreach (PictureBox laser in lasers)
             {
-                //TODO
+                //Foreach loop foreach type(item) in form using Call Function OfType
+                foreach (var item in form.Controls.OfType<PictureBox>())
+                {
+                    //If Statement if "Enemy" is Tag of current item.
+                    if (item.Tag == "Enemy")
+                    {
+                        //TODO
+                    }
+                }
             }
         }
     }
