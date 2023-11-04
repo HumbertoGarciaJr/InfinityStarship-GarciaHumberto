@@ -20,6 +20,7 @@ namespace InfinityStarship
         //Objects Instantiation
         Starship spaceship;//declare spaceship obj of Class Starship
         UFO enemies;//declare enemies obj of Class UFO
+        Laser lasers;//declare lasers obj of Class Laser
 
         //Variables
         int enemiesCurrentMs = 0;//enemies current starting running milliseconds
@@ -38,6 +39,8 @@ namespace InfinityStarship
             spaceship = new Starship(this);//initialize spaceship obj accessing Class Starship in this(playScreenForm) form
             //Store new Class UFO into enemies
             enemies = new UFO(this);//initialize enemies obj accessing Class UFO in this(playScreenForm) form
+            //Store new Class Laser into lasers
+            lasers = new Laser(this, spaceship, enemies);//initialize lasers obj accessing Class Laser in this(playScreenForm) form
         }
 
         //Function event playScreenForm_KeyDown to Occur when the Key is being pressed down
@@ -45,6 +48,8 @@ namespace InfinityStarship
         {
             //Call Function moveControl of spaceship
             spaceship.moveControl(e);
+            //Call Function moveLaserControl of lasers
+            lasers.moveLaserControl(e);
         }
 
         //Function event playScreenForm_Tick to Run Timer constantly updating game's behaviors of playScreenForm form
@@ -60,6 +65,9 @@ namespace InfinityStarship
                 //Store 0 into enemiesCurrentMs
                 enemiesCurrentMs = 0;//reset to 0 milliseconds everytime a new tick is reached
             }
+
+            //Call Function shootLaser of lasers
+            lasers.shootLaser();
         }
     }
 }
