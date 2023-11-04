@@ -111,7 +111,8 @@ namespace InfinityStarship
                 laser.Top -= 25;
             }
 
-            //TODO
+            //Call Function destroyEnemyAndLaser
+            destroyEnemyAndLaser();
         }
 
         //Function destroyEnemyAndLaser to Destroy/Remove enemies/lasers upon any interactive hit/collision
