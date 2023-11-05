@@ -55,6 +55,7 @@
     <Compile Include="Laser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Score.cs" />
     <Compile Include="Starship.cs" />
     <Compile Include="UFO.cs" />
     <EmbeddedResource Include="Form1.resx">
