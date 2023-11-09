@@ -47,20 +47,22 @@ namespace InfinityStarship
         //Function spawnEnemyWave to build and spawn enemies(UFOs)
         private void spawnEnemyWave()
         {
+            //Local Instantiation
+            ImageList imageList = form.imageList_enemies;
+
             //For Loop running i 12 times
             for (int i = 0; i <= 11; i++)
             {
-
                 //Call Function Add of enemies(To store new class PictureBox into enemies list)
                 enemies.Add(new PictureBox()
                 {//enemies list Properties Constructor
-                    BackColor = Color.ForestGreen,//Temporary PictureBox Backcolor of ForestGreen
-                    Width = 75,//PictureBox Width of 75
-                    Height = 75,//PictureBox Height of 75
-                    Visible = true,//PictureBox Visibility at true
-                    Left = 725,//PictureBox at Left of 725(Default)
-                    Top = 100,//PictureBox at Top of 100(Default)
-                    Tag = "Enemy",//PictureBox Tag of "Enemy" for each enemies list enemy index
+                    Image = imageList.Images[0],//Use Image at index 0 of imageList_enemies
+                    Width = 75,//Image Width of 75
+                    Height = 75,//Image Height of 75
+                    Visible = true,//Image Visibility at true
+                    Left = 725,//Image at Left of 725(Default)
+                    Top = 100,//Image at Top of 100(Default)
+                    Tag = "Enemy",//Image Tag of "Enemy" for each enemies list enemy index
                 });
 
                 //Switch Case based on given current index

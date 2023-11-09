@@ -30,7 +30,9 @@ namespace InfinityStarship
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(playScreenForm));
             this.timer_playScreenForm = new System.Windows.Forms.Timer(this.components);
+            this.imageList_enemies = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // timer_playScreenForm
@@ -38,6 +40,12 @@ namespace InfinityStarship
             this.timer_playScreenForm.Enabled = true;
             this.timer_playScreenForm.Interval = 25;
             this.timer_playScreenForm.Tick += new System.EventHandler(this.playScreenForm_Tick);
+            // 
+            // imageList_enemies
+            // 
+            this.imageList_enemies.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList_enemies.ImageStream")));
+            this.imageList_enemies.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList_enemies.Images.SetKeyName(0, "UFO.png");
             // 
             // playScreenForm
             // 
@@ -57,6 +65,7 @@ namespace InfinityStarship
         #endregion
 
         private System.Windows.Forms.Timer timer_playScreenForm;
+        public System.Windows.Forms.ImageList imageList_enemies;
     }
 }
 
