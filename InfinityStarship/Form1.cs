@@ -68,6 +68,9 @@ namespace InfinityStarship
 
             //Call Function shootLaser of lasers
             lasers.shootLaser();
+
+            //Store string value + totalScore of Class Score into label_score Property
+            label_score.Text = "SCORE: " + Score.totalScore;
         }
     }
 }
