@@ -41,10 +41,13 @@ namespace InfinityStarship
         //Function spawnSpaceship to build and Spawn spaceship(Starship)
         private void spawnSpaceship()
         {
+            //Local Instantiation
+            PictureBox pictureBox = form.pictureBox_spaceship;
+
             //Store new class PictureBox into spaceship object
             spaceship = new PictureBox()
             {//spaceship Properties Constructor
-                BackColor = Color.Black,//Temporary PictureBox Backcolor of Black
+                Image = pictureBox.Image,//Use Image of pictureBox_spaceship
                 Width = 100,//PictureBox Width of 100
                 Height = 75,//PictureBox Height of 75
                 Visible = true,//PictureBox Visibility at true
