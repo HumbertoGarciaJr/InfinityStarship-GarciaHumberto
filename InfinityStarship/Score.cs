@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;//Using namespace System.Windows.Forms allows use of Windows.Forms controls/properties
 
 //Project/Namespace Infinity Starship
 namespace InfinityStarship
@@ -17,6 +18,15 @@ namespace InfinityStarship
         public static int getScore { get { return totalScore; } }
         public static bool gameOver { get; set; }
 
-        //TODO
+        //Function calculateScore to Accumulate/Collect points that are to be stored in the Scoring System.
+        public static void calculateScore(PictureBox enemy, playScreenForm form)//2 parameter
+        {
+            //If Statement if "Enemy" is Tag of enemy(PictureBox parameter).
+            if (enemy.Tag == "Enemy")
+            {
+                //Store compound addition of 25 value into totalScore
+                totalScore += 25;
+            }
+        }
     }
 }

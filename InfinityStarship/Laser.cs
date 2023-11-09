@@ -130,6 +130,8 @@ namespace InfinityStarship
                         //If Statement if laser Bounds using Call Function IntersectsWith item Bounds
                         if (laser.Bounds.IntersectsWith(item.Bounds))
                         {
+                            //TODO
+
                             //Call Function Remove to destroy current item & laser of form
                             form.Controls.Remove(item);
                             form.Controls.Remove(laser);
