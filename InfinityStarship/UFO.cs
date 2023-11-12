@@ -163,7 +163,8 @@ namespace InfinityStarship
                 }
             }
 
-            //TODO
+            //Call Function gameOver
+            gameOver();
         }
 
         //Function gameOver to End/Stop the current game when descending enemies reach spaceship

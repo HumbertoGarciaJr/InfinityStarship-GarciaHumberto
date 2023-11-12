@@ -71,6 +71,16 @@ namespace InfinityStarship
 
             //Store string value + totalScore of Class Score into label_score Property
             label_score.Text = "SCORE: " + Score.totalScore;
+
+            //If Statement if gameOver of Class Score is true
+            if (Score.gameOver == true)
+            {
+                //Store bool value false into timer_playScreenForm Property
+                timer_playScreenForm.Enabled = false;                
+                //Call Function Show of MessageBox to display game's over with final score
+                MessageBox.Show("         Game Over\n" +
+                                "     Final Score: " + Score.totalScore);
+            }
         }
     }
 }
