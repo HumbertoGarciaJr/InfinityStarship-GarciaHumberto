@@ -162,12 +162,25 @@ namespace InfinityStarship
                     enemies[i].Top += enemySpeedY;
                 }
             }
+
+            //TODO
         }
 
         //Function gameOver to End/Stop the current game when descending enemies reach spaceship
         public void gameOver()
         {
-            //TODO
+            //For Loop running i based on count Property of enemies list(12 enemies)
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                //If statement if current enemies index Top Property equals 900(Relative spaceship vertical location)
+                if (enemies[i].Top == 900)
+                {
+                    //Store bool value true into gameOver value of Class Score
+                    Score.gameOver = true;
+
+                    return;//Exit Function
+                }
+            }
         }
     }
 }
