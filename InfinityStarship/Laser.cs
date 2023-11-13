@@ -20,6 +20,7 @@ namespace InfinityStarship
         public int laserSpeed { get; set; }
         public playScreenForm form;
         public List<PictureBox> lasers;
+        public List<PictureBox> lasersToDestroy;
         public Starship spaceship_Starship;
         public UFO enemies_UFO;
 
@@ -30,6 +31,7 @@ namespace InfinityStarship
             this.form = form;//store form(parameter) into this(Laser) form
             laserSpeed = 5;//store 5 into laserSpeed
             lasers = new List<PictureBox>();//store new class PictureBox obj collection List into lasers
+            lasersToDestroy = new List<PictureBox>();//store new class PictureBox obj collection List into lasersToDestroy
             this.spaceship_Starship = spaceship;//store spaceship(Starship parameter) into this(spaceship_Starship) obj instance in our class(Laser)
             this.enemies_UFO = enemies;//store enemies(UFO parameter) into this(enemies_UFO) obj instance in our class(Laser)
 
@@ -109,6 +111,13 @@ namespace InfinityStarship
             {
                 //Store compound subtraction of -25 value into Top Property of laser type(Making lasers go Up)
                 laser.Top -= 25;
+
+                //If Statement if any laser hits/collides the Top Edge
+                if (laser.Top < 0)
+                {
+                    //Call Function Add to lasersToDestroy List collection
+                    lasersToDestroy.Add(laser);
+                }
             }
 
             //Call Function destroyEnemyAndLaser
@@ -133,16 +142,24 @@ namespace InfinityStarship
                             //Call Function calculateScore of Class Score
                             Score.calculateScore(item, form);
 
-                            //Call Function Remove to visually destroy current item & laser of form
+                            //Call Function Remove to visually destroy current item of form
                             form.Controls.Remove(item);
-                            form.Controls.Remove(laser);
                             //Call Function Remove to logically destroy item of enemies list
                             enemies_UFO.enemies.Remove(item);
-                            //Store 0 into Top Property of laser type(Makes it stop moving Up)
-                            laser.Top = 0;
+                            //Store 0 - laser.Height into Top Property of laser type(Makes it stop moving Up)
+                            laser.Top = 0 - laser.Height;
                         }
                     }
                 }
+            }
+
+            //Foreach loop foreach type(laser) in lasersToDestroy
+            foreach (var laser in lasersToDestroy)
+            {
+                //Call Function Remove to logically destroy item of enemies list
+                lasers.Remove(laser);
+                //Call Function Remove to visually destroy current item of form
+                form.Controls.Remove(laser);
             }
         }
     }
