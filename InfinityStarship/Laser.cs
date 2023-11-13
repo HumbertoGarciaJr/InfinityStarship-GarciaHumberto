@@ -20,8 +20,8 @@ namespace InfinityStarship
         public int laserSpeed { get; set; }
         public playScreenForm form;
         public List<PictureBox> lasers;
-        public Starship spaceship;
-        public UFO enemies;
+        public Starship spaceship_Starship;
+        public UFO enemies_UFO;
 
         //Constructor
         public Laser (playScreenForm form, Starship spaceship, UFO enemies)//3 parameter
@@ -30,9 +30,9 @@ namespace InfinityStarship
             this.form = form;//store form(parameter) into this(Laser) form
             laserSpeed = 5;//store 5 into laserSpeed
             lasers = new List<PictureBox>();//store new class PictureBox obj collection List into lasers
-            this.spaceship = spaceship;//store spaceship(Starship parameter) into this(spaceship) obj instance in our class(Laser)
-            this.enemies = enemies;//store enemies(UFO parameter) into this(enemies) obj instance in our class(Laser)
-            
+            this.spaceship_Starship = spaceship;//store spaceship(Starship parameter) into this(spaceship_Starship) obj instance in our class(Laser)
+            this.enemies_UFO = enemies;//store enemies(UFO parameter) into this(enemies_UFO) obj instance in our class(Laser)
+
             //Call Function Init
             Init();
         }
@@ -133,9 +133,11 @@ namespace InfinityStarship
                             //Call Function calculateScore of Class Score
                             Score.calculateScore(item, form);
 
-                            //Call Function Remove to destroy current item & laser of form
+                            //Call Function Remove to visually destroy current item & laser of form
                             form.Controls.Remove(item);
                             form.Controls.Remove(laser);
+                            //Call Function Remove to logically destroy item of enemies list
+                            enemies_UFO.enemies.Remove(item);
                             //Store 0 into Top Property of laser type(Makes it stop moving Up)
                             laser.Top = 0;
                         }
