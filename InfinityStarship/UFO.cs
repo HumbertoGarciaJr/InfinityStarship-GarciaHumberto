@@ -167,8 +167,14 @@ namespace InfinityStarship
             gameOver();
         }
 
+        //Function nextEnemyWave to build and spawn the next wave of enemies(UFOs)
+        private void nextEnemyWave()
+        {
+            //TODO
+        }
+
         //Function gameOver to End/Stop the current game when descending enemies reach spaceship
-        public void gameOver()
+        private void gameOver()
         {
             //For Loop running i based on count Property of enemies list(12 enemies)
             for (int i = 0; i < enemies.Count; i++)
