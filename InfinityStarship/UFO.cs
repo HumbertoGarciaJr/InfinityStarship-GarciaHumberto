@@ -163,6 +163,8 @@ namespace InfinityStarship
                 }
             }
 
+            //Call Function nextEnemyWave
+            nextEnemyWave();
             //Call Function gameOver
             gameOver();
         }
@@ -170,7 +172,12 @@ namespace InfinityStarship
         //Function nextEnemyWave to build and spawn the next wave of enemies(UFOs)
         private void nextEnemyWave()
         {
-            //TODO
+            //If Statement if enemies count Property equals 0(All enemies have been destroyed)
+            if (enemies.Count == 0)
+            {
+                //Call Function spawnEnemyWave
+                spawnEnemyWave();
+            }
         }
 
         //Function gameOver to End/Stop the current game when descending enemies reach spaceship
