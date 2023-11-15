@@ -19,7 +19,7 @@ namespace InfinityStarship
         public PictureBox enemy;
         public int enemySpeedX { get; set; }
         public int enemySpeedY { get; set; }
-        public int increasedSpeed;
+        public int increasedLevelSpeed { get; set; }
         playScreenForm form;
         public List<PictureBox> enemies;
 
@@ -30,7 +30,7 @@ namespace InfinityStarship
             this.form = form;//store form(parameter) into this(UFO) form
             enemySpeedX = 25;//store 25 into enemySpeedX(25 pixels per tick)
             enemySpeedY = 100;//store 100 into enemySpeedY(100 pixels per tick)
-            increasedSpeed = 0;//store 0 into increasedSpeed(default speed should not be increased)
+            increasedLevelSpeed = 1;//store 1 into increasedLevelSpeed(default speed should begin by level 1)
             enemies = new List<PictureBox>();//store new class PictureBox obj collection List into enemies
 
             //Call Function Init
@@ -175,6 +175,9 @@ namespace InfinityStarship
             //If Statement if enemies count Property equals 0(All enemies have been destroyed)
             if (enemies.Count == 0)
             {
+                //Process calculation increasedLevelSpeed postfix increment
+                increasedLevelSpeed++;
+
                 //Call Function spawnEnemyWave
                 spawnEnemyWave();
             }
