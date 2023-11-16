@@ -178,6 +178,20 @@ namespace InfinityStarship
                 //Process calculation increasedLevelSpeed postfix increment
                 increasedLevelSpeed++;
 
+                //If Statement if enemySpeedX is less than 0
+                if (enemySpeedX < 0)
+                {
+                    //Store value -1 into enemySpeedX
+                    enemySpeedX *= -1;//makes every next enemy wave start going right
+                }
+
+                //If Statement if enemySpeedX is less than 80
+                if (enemySpeedX < 80)
+                {
+                    //Process calculation enemySpeedX postfix increment
+                    enemySpeedX++;//makes every next enemy wave jump by one increasing pixel, conveying acceleration to further increase difficulty
+                }
+
                 //Call Function spawnEnemyWave
                 spawnEnemyWave();
             }
