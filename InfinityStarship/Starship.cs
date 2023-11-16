@@ -25,7 +25,7 @@ namespace InfinityStarship
         {
             //Objects/Attributes Initializations
             this.form = form;//store form(parameter) into this(Starship) form
-            spaceshipSpeed = 5;//store 5 into spaceshipSpeed
+            spaceshipSpeed = 8;//store 8 into spaceshipSpeed
 
             //Call Function Init
             Init();

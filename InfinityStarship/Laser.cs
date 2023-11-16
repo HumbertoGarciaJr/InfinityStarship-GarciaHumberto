@@ -29,7 +29,7 @@ namespace InfinityStarship
         {
             //Objects/Attributes Initializations
             this.form = form;//store form(parameter) into this(Laser) form
-            laserSpeed = 5;//store 5 into laserSpeed
+            laserSpeed = 8;//store 8 into laserSpeed
             lasers = new List<PictureBox>();//store new class PictureBox obj collection List into lasers
             lasersToDestroy = new List<PictureBox>();//store new class PictureBox obj collection List into lasersToDestroy
             this.spaceship_Starship = spaceship;//store spaceship(Starship parameter) into this(spaceship_Starship) obj instance in our class(Laser)
@@ -87,19 +87,23 @@ namespace InfinityStarship
             //If Statement if Space Key is being pressed
             if (e.KeyCode == Keys.Space)
             {
-                //Call Function Add of lasers(To store new class PictureBox into lasers list)
-                lasers.Add(new PictureBox()
-                {//lasers list Properties Constructor(Actual) similarly to laser
-                    BackColor = Color.Red,
-                    Width = 10,
-                    Height = 30,
-                    Visible = true,
-                    Left = laser.Location.X,
-                    Top = laser.Location.Y,
-                });
+                //If Statement if lasers count Property is less than 1(Allows one laser at a time until destroyed from list)
+                if (lasers.Count < 1)
+                {
+                    //Call Function Add of lasers(To store new class PictureBox into lasers list)
+                    lasers.Add(new PictureBox()
+                    {//lasers list Properties Constructor(Actual) similarly to laser
+                        BackColor = Color.Red,
+                        Width = 10,
+                        Height = 30,
+                        Visible = true,
+                        Left = laser.Location.X,
+                        Top = laser.Location.Y,
+                    });
 
-                //Call Function AddRange to Property of form(playScreenForm)
-                form.Controls.AddRange(lasers.ToArray());//adding lasers to an array as available controls to the form(playScreenForm)
+                    //Call Function AddRange to Property of form(playScreenForm)
+                    form.Controls.AddRange(lasers.ToArray());//adding lasers to an array as available controls to the form(playScreenForm)
+                }
             }
         }
 
@@ -109,8 +113,8 @@ namespace InfinityStarship
             //Foreach loop foreach type(laser) in lasers
             foreach(PictureBox laser in lasers)
             {
-                //Store compound subtraction of -25 value into Top Property of laser type(Making lasers go Up)
-                laser.Top -= 25;
+                //Store compound subtraction of -17 value into Top Property of laser type(Making lasers go Up)
+                laser.Top -= 17;
 
                 //If Statement if any laser hits/collides the Top Edge
                 if (laser.Top < 0)
