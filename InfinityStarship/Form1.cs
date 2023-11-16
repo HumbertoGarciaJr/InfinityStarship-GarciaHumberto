@@ -55,8 +55,57 @@ namespace InfinityStarship
         //Function event playScreenForm_Tick to Run Timer constantly updating game's behaviors of playScreenForm form
         private void playScreenForm_Tick(object sender, EventArgs e)
         {
-            //Store compound addition of 100 into enemiesCurrentMs
-            enemiesCurrentMs += 100;
+            //Switch Case based on current given level
+            switch (enemies.increasedLevelSpeed)
+            {
+                case (1):
+                    //Store +100 compound addition from each previous level(starting from Default 100 value of level 1) into enemiesCurrentMs
+                    enemiesCurrentMs += 100;
+                    break;
+                case (2):
+                    enemiesCurrentMs += 200;
+                    break;
+                case (3):
+                    enemiesCurrentMs += 300;
+                    break;
+                case (4):
+                    enemiesCurrentMs += 400;
+                    break;
+                case (5):
+                    enemiesCurrentMs += 500;
+                    break;
+                case (6):
+                    enemiesCurrentMs += 600;
+                    break;
+                case (7):
+                    enemiesCurrentMs += 700;
+                    break;
+                case (8):
+                    enemiesCurrentMs += 800;
+                    break;
+                case (9):
+                    enemiesCurrentMs += 900;
+                    break;
+                case (10):
+                    enemiesCurrentMs += 1000;
+                    break;
+                case (11):
+                    enemiesCurrentMs += 1100;
+                    break;
+                case (12):
+                    enemiesCurrentMs += 1200;
+                    break;
+                case (13):
+                    enemiesCurrentMs += 1300;
+                    break;
+                case (14):
+                    enemiesCurrentMs += 1400;
+                    break;
+                default:
+                    enemiesCurrentMs += 1500;
+                    break;
+            }
+
             //If Statement if enemiesCurrentMs is greater than or equal to 3000
             if (enemiesCurrentMs >= 3000)//enables enemies to move at their own adjusted speed
             {
@@ -71,6 +120,8 @@ namespace InfinityStarship
 
             //Store string value + totalScore of Class Score into label_score Property
             label_score.Text = "SCORE: " + Score.totalScore;
+            //Store string value + increasedLevelSpeed of enemies into label_level Property
+            label_level.Text = "LEVEL: " + enemies.increasedLevelSpeed;
 
             //If Statement if gameOver of Class Score is true
             if (Score.gameOver == true)

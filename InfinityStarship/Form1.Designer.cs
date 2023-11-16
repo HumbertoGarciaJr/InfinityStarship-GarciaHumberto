@@ -36,6 +36,7 @@ namespace InfinityStarship
             this.pictureBox_spaceship = new System.Windows.Forms.PictureBox();
             this.label_score = new System.Windows.Forms.Label();
             this.label_title = new System.Windows.Forms.Label();
+            this.label_level = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_spaceship)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,12 +87,25 @@ namespace InfinityStarship
             this.label_title.TabIndex = 2;
             this.label_title.Text = "INFINITY STARSHIP";
             // 
+            // label_level
+            // 
+            this.label_level.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_level.AutoSize = true;
+            this.label_level.Font = new System.Drawing.Font("Nachlieli CLM", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label_level.ForeColor = System.Drawing.Color.White;
+            this.label_level.Location = new System.Drawing.Point(830, 20);
+            this.label_level.Name = "label_level";
+            this.label_level.Size = new System.Drawing.Size(176, 52);
+            this.label_level.TabIndex = 3;
+            this.label_level.Text = "LEVEL:";
+            // 
             // playScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1084, 561);
+            this.Controls.Add(this.label_level);
             this.Controls.Add(this.label_title);
             this.Controls.Add(this.label_score);
             this.Controls.Add(this.pictureBox_spaceship);
@@ -114,6 +128,7 @@ namespace InfinityStarship
         public System.Windows.Forms.PictureBox pictureBox_spaceship;
         private System.Windows.Forms.Label label_score;
         private System.Windows.Forms.Label label_title;
+        private System.Windows.Forms.Label label_level;
     }
 }
 
