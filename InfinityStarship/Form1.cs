@@ -46,10 +46,14 @@ namespace InfinityStarship
         //Function event playScreenForm_KeyDown to Occur when the Key is being pressed down
         private void playScreenForm_KeyDown(object sender, KeyEventArgs e)
         {
-            //Call Function moveControl of spaceship
-            spaceship.moveControl(e);
-            //Call Function moveLaserControl of lasers
-            lasers.moveLaserControl(e);
+            //If Statement if gameOver of Class Score is false
+            if (Score.gameOver == false)
+            {
+                //Call Function moveControl of spaceship
+                spaceship.moveControl(e);
+                //Call Function moveLaserControl of lasers
+                lasers.moveLaserControl(e);
+            }
         }
 
         //Function event playScreenForm_Tick to Run Timer constantly updating game's behaviors of playScreenForm form
