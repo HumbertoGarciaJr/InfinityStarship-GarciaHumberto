@@ -48,6 +48,7 @@ namespace InfinityStarship
             spaceship = new PictureBox()
             {//spaceship Properties Constructor
                 Image = pictureBox.Image,//Use Image of pictureBox_spaceship
+                BackColor = Color.Transparent,//Use Transparent BackColor
                 Width = 100,//PictureBox Width of 100
                 Height = 75,//PictureBox Height of 75
                 Visible = true,//PictureBox Visibility at true

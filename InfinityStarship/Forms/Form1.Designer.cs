@@ -54,6 +54,7 @@ namespace InfinityStarship
             // 
             // pictureBox_spaceship
             // 
+            this.pictureBox_spaceship.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_spaceship.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_spaceship.Image")));
             this.pictureBox_spaceship.Location = new System.Drawing.Point(492, 470);
             this.pictureBox_spaceship.Name = "pictureBox_spaceship";
@@ -91,6 +92,7 @@ namespace InfinityStarship
             // 
             this.label_level.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_level.AutoSize = true;
+            this.label_level.BackColor = System.Drawing.Color.Transparent;
             this.label_level.Font = new System.Drawing.Font("Nachlieli CLM", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label_level.ForeColor = System.Drawing.Color.White;
             this.label_level.Location = new System.Drawing.Point(830, 20);
@@ -104,11 +106,13 @@ namespace InfinityStarship
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1084, 561);
             this.Controls.Add(this.label_level);
             this.Controls.Add(this.label_title);
             this.Controls.Add(this.label_score);
             this.Controls.Add(this.pictureBox_spaceship);
+            this.DoubleBuffered = true;
             this.Name = "playScreenForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Play Screen Form";

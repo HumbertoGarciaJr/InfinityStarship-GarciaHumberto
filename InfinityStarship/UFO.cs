@@ -57,6 +57,7 @@ namespace InfinityStarship
                 enemies.Add(new PictureBox()
                 {//enemies list Properties Constructor
                     Image = imageList.Images[0],//Use Image at index 0 of imageList_enemies
+                    BackColor = Color.Transparent,//Use Transparent BackColor
                     Width = 75,//Image Width of 75
                     Height = 75,//Image Height of 75
                     Visible = true,//Image Visibility at true
