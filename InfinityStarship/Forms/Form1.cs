@@ -21,6 +21,7 @@ namespace InfinityStarship
         Starship spaceship;//declare spaceship obj of Class Starship
         UFO enemies;//declare enemies obj of Class UFO
         Laser lasers;//declare lasers obj of Class Laser
+        playerIDEntryForm playerIDWindow;//declare playerIDWindow obj of Form Class playerIDEntryForm
 
         //Variables
         int enemiesCurrentMs = 0;//enemies current starting running milliseconds
@@ -30,6 +31,8 @@ namespace InfinityStarship
         {
             //Default Call Function
             InitializeComponent();
+            //Store new Class playerIDEntryForm into playerIDWindow
+            playerIDWindow = new playerIDEntryForm();
         }
 
         //Function event playScreenForm_Load to Load on Startup of playScreenForm form
@@ -135,6 +138,8 @@ namespace InfinityStarship
                 //Call Function Show of MessageBox to display game's over with final score
                 MessageBox.Show("         Game Over\n" +
                                 "     Final Score: " + Score.totalScore);
+                //Call Functon Show of playerIDWindow
+                playerIDWindow.Show();
             }
         }
     }
