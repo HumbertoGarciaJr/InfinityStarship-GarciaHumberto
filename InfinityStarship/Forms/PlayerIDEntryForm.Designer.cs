@@ -111,6 +111,7 @@ namespace InfinityStarship
             // 
             // button_save
             // 
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_save.Font = new System.Drawing.Font("Nachlieli CLM", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.button_save.Location = new System.Drawing.Point(93, 278);
             this.button_save.Name = "button_save";
@@ -118,6 +119,7 @@ namespace InfinityStarship
             this.button_save.TabIndex = 6;
             this.button_save.Text = "Save";
             this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.playerIDEntryForm_Save_Click);
             // 
             // playerIDEntryForm
             // 
@@ -138,6 +140,7 @@ namespace InfinityStarship
             this.Name = "playerIDEntryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Player ID Entry Form";
+            this.Load += new System.EventHandler(this.playerIDEntryForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
