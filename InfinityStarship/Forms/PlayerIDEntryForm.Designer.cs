@@ -29,6 +29,7 @@ namespace InfinityStarship
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(playerIDEntryForm));
             this.label_description = new System.Windows.Forms.Label();
             this.label_playerID = new System.Windows.Forms.Label();
             this.textBox_playerID = new System.Windows.Forms.TextBox();
@@ -131,6 +132,8 @@ namespace InfinityStarship
             this.Controls.Add(this.label_playerID);
             this.Controls.Add(this.label_description);
             this.Controls.Add(this.label_rank);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "playerIDEntryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

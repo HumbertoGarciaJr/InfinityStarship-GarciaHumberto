@@ -113,6 +113,8 @@ namespace InfinityStarship
             this.Controls.Add(this.label_score);
             this.Controls.Add(this.pictureBox_spaceship);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "playScreenForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Play Screen Form";
