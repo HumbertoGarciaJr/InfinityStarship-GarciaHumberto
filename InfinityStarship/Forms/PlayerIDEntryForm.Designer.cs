@@ -71,7 +71,6 @@ namespace InfinityStarship
             this.textBox_playerID.Name = "textBox_playerID";
             this.textBox_playerID.Size = new System.Drawing.Size(295, 64);
             this.textBox_playerID.TabIndex = 2;
-            this.textBox_playerID.Text = "ABC";
             this.textBox_playerID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_leaderboard
@@ -85,7 +84,6 @@ namespace InfinityStarship
             this.textBox_leaderboard.ReadOnly = true;
             this.textBox_leaderboard.Size = new System.Drawing.Size(271, 328);
             this.textBox_leaderboard.TabIndex = 3;
-            this.textBox_leaderboard.Text = "ABC";
             // 
             // label_rank
             // 
