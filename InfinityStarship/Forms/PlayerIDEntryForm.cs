@@ -36,7 +36,7 @@ namespace InfinityStarship
             //Store bool value false into button_save Property
             button_save.Enabled = false;
             //Store textBox_playerID Property + totalScore of Class Score into textBox_leaderboard Property
-            textBox_leaderboard.Text = textBox_playerID.Text + "\t   " + Score.getScore;//temporary hardcoded string values(change to small database flatfile)
+            textBox_leaderboard.Text = textBox_playerID.Text + "\t" + Score.getScore;//temporary hardcoded string values(change to small database flatfile)
         }
     }
 }
